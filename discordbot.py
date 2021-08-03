@@ -14,6 +14,7 @@ async def on_command_error(ctx, error):
     await ctx.send(error_msg)
 
 async def on_ready():
+    print("起動!")
     await bot.change_presence(activity=discord.Game(name="じゃんたま",type=1))
 
 
