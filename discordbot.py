@@ -13,7 +13,8 @@ async def on_command_error(ctx, error):
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
 
-
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name="じゃんたま",type=1))
 
 
 @bot.command()
@@ -21,9 +22,7 @@ async def おはよう(ctx):
     await ctx.send('ぐっどもーにんぐべあー')
 
 
-@bot.event
-async def on_ready():
-    await bot.change_presence(activity=discord.Game(name="じゃんたま",type=1))
+
 
 
 bot.run(token)
