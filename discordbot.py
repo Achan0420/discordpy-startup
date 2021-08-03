@@ -21,6 +21,9 @@ async def おはよう(ctx):
     await ctx.send('ぐっどもーにんぐべあー')
 
 
+@bot.event
+async def on_ready():
+    await bot.change_presence(activity=discord.Game(name="じゃんたま",type=1))
 
 
 bot.run(token)
